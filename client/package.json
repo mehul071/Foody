@@ -50,5 +50,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://61e9d9701883041d6ca52e0b--fooodyy.netlify.app/"
+  "proxy": "http://localhost:5000/"
 }
