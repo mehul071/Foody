@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { registerUser } from "../actions/UserAction";
+import Button from "react-bootstrap/Button";
 import "./Register.css";
+import { FormControl, InputGroup } from "react-bootstrap";
 
 function Register() {
   const [name, setName] = useState("");
@@ -28,49 +30,60 @@ function Register() {
     <div className="register">
       <div className="box">
         <h1 className="text-3xl mb-3">Register</h1>
-        <input
-          type="name"
-          placeholder="Name"
-          className="register_name"
-          value={name}
-          onChange={(e) => {
-            setName(e.target.value);
-          }}
-        />
-        <input
-          type="email"
-          placeholder="Enter Email"
-          className="register_email"
-          value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Enter Password"
-          className="register_password"
-          required
-          value={password}
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-        />
-        <input
-          type="password"
-          placeholder="Confirm Password"
-          className="input_confirmpass"
-          value={cpassowrd}
-          onChange={(e) => {
-            setCPassword(e.target.value);
-          }}
-        />
-        <button className="signin_btn" onClick={register}>
+        <InputGroup className="mb-4">
+          <FormControl
+            placeholder="UserName"
+            aria-label="UserName"
+            aria-describedby="basic-addon1"
+            value={name}
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+          />
+        </InputGroup>
+        <InputGroup className="mb-4">
+          <FormControl
+            placeholder="Email"
+            aria-label="Email"
+            aria-describedby="basic-addon1"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+        </InputGroup>
+        <InputGroup className="mb-4">
+          <FormControl
+            placeholder="Password"
+            aria-label="password"
+            aria-describedby="basic-addon1"
+            value={password}
+            type="password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+        </InputGroup>
+        <InputGroup className="mb-4">
+          <FormControl
+            placeholder="Confirm Password"
+            aria-label="confirm Password"
+            aria-describedby="basic-addon1"
+            type="password"
+            value={cpassowrd}
+            onChange={(e) => {
+              setCPassword(e.target.value);
+            }}
+          />
+        </InputGroup>
+
+        <Button variant="dark" className="sign-btn border-2" onClick={register}>
           Register
-        </button>
+        </Button>
         <h1 className="mt-2 redirect_login">
-          <a href="/login">Back to Login</a>
+          <a href="/login" className="text-xl hover:text-black">
+            Back to Login
+          </a>
         </h1>
       </div>
     </div>

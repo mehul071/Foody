@@ -11,8 +11,6 @@ function Login() {
 
   const [userEmail, setuserEmail] = useState("");
   const [userPassword, setuserPassword] = useState("");
-  const [showLoginButton, setshowLoginButton] = useState(true);
-  const [showLogoutButton, setshowLogoutButton] = useState(false);
   const dispatch = useDispatch();
   const loginState = useSelector((state) => state.loginUserReducer);
   const { success, loading, error } = loginState;
@@ -29,15 +27,6 @@ function Login() {
     };
     dispatch(loginUser(user));
   }
-  const onLoginSuccess = (res) => {
-    console.log("login success", res.profileObj);
-    setshowLoginButton(false);
-    setshowLogoutButton(true);
-    const user = {
-      email: userEmail,
-    };
-    dispatch(loginUser(user));
-  };
   return (
     <div className="login">
       <div className="auth-options">
