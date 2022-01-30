@@ -21,19 +21,13 @@ function Navbar() {
   }
 
   return (
-    <div className="Navbar flex justify-between p-6 place-items-center hadow-lg shadow-indigo-500/50">
+    <div className="Navbar flex justify-between p-4 place-items-center">
       <div className="left">
-        <h1>
-          F<span>oo</span>dy
-        </h1>
-      </div>
-      <div className="center font-semibold">
-        <a className="text-black " href="/">
-          Home
+        <a href="/" className="cursor-pointer">
+          <h1>
+            F<span>oo</span>dy
+          </h1>
         </a>
-        <a>Menu</a>
-        <a className="">About Us</a>
-        <a>Contact</a>
       </div>
       <div className="right">
         {Login ? <span className="user_name">{current_user.name}</span> : null}

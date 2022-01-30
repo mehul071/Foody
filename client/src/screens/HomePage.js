@@ -5,6 +5,7 @@ import Loading from "../Components/Loading";
 import Pizza from "../Components/Pizza";
 import Error from "../Components/Error";
 import Filter from "../Components/Filter";
+import Row from "react-bootstrap/Row";
 import "./HomePage.css";
 
 function HomePage() {
@@ -16,21 +17,29 @@ function HomePage() {
   }, []);
   return (
     <div>
-      <Filter />
-      <div className="pi">
-        {loading ? (
-          <div>
-            <Loading />
-          </div>
-        ) : error ? (
-          <div>
-            <Error error="Something went wrong" />
-          </div>
-        ) : (
-          pizzas.map((pizza, i) => {
-            return <Pizza pizza={pizza} />;
-          })
-        )}
+      <div className="container">
+        <Filter />
+        <div className="row single_pizza">
+          {loading ? (
+            <div>
+              <Loading />
+            </div>
+          ) : error ? (
+            <div>
+              <Error error="Something went wrong" />
+            </div>
+          ) : (
+            pizzas.map((pizza, i) => {
+              return (
+                <div value={i} className="col-md-4">
+                  <div>
+                    <Pizza pizza={pizza} />
+                  </div>
+                </div>
+              );
+            })
+          )}
+        </div>
       </div>
     </div>
   );

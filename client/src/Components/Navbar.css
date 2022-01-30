@@ -3,9 +3,7 @@
 }
 .left h1{
     font-size:2.4rem;
-    /* margin-left:127px; */
     color:white;
-    /* align-content: right; */
     font-family: 'Yuji Hentaigana Akebono', cursive;
 }
 .left h1 span{
@@ -60,4 +58,8 @@
     margin-right: 1rem;
     color:white;
     font-size:1rem;
+    text-decoration: none !important;
+}
+.login_btn{
+    text-decoration: none;
 }

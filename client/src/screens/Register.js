@@ -81,7 +81,7 @@ function Register() {
           Register
         </Button>
         <h1 className="mt-2 redirect_login">
-          <a href="/login" className="text-xl hover:text-black">
+          <a href="/login" className="text-xl hover:text-black back_login">
             Back to Login
           </a>
         </h1>

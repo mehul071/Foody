@@ -4,6 +4,7 @@ import { loginUser } from "../actions/UserAction";
 import { useDispatch, useSelector } from "react-redux";
 import Loading from "../Components/Loading";
 import "./Login.css";
+import { FormControl, InputGroup, Button } from "react-bootstrap";
 
 function Login() {
   const clientId =
@@ -21,6 +22,7 @@ function Login() {
   }, []);
 
   function login() {
+    // e.preventDefault();
     const user = {
       email: userEmail,
       password: userPassword,
@@ -28,36 +30,42 @@ function Login() {
     dispatch(loginUser(user));
   }
   return (
-    <div className="login">
-      <div className="auth-options">
-        <h1 className="heading">Sign in.</h1>
-        <div className="input_1">
-          <input
-            type="email"
-            placeholder="Email"
-            className="input_email"
+    <div className="sign-in-box flex flex-col justify-center items-center mt-8">
+      {loading && <Loading />}
+      <div className="flex flex-col items-center box bg-white">
+        <h1 className="">Sign in.</h1>
+        <InputGroup className="mb-4">
+          <FormControl
+            placeholder="UserName"
+            aria-label="UserName"
+            aria-describedby="basic-addon1"
             value={userEmail}
             onChange={(e) => {
               setuserEmail(e.target.value);
             }}
           />
-        </div>
-        <div className="input_2">
-          <input
-            type="password"
+        </InputGroup>
+        <InputGroup className="mb-4">
+          <FormControl
             placeholder="Password"
-            className="input_password"
+            aria-label="password"
+            aria-describedby="basic-addon1"
+            type="password"
             value={userPassword}
             onChange={(e) => {
               setuserPassword(e.target.value);
             }}
           />
-        </div>
-        <div>
-          <button className="signin_btn" onClick={login}>
-            Sign in
-          </button>
-        </div>
+        </InputGroup>
+        <Button
+          variant="dark"
+          className="mb-4"
+          onClick={(e) => {
+            login(e);
+          }}
+        >
+          Sign in
+        </Button>
         <p className="new_account">
           Don't have an account?
           <a href="/register" className="redirect_register">

@@ -5,6 +5,7 @@ import HomePage from "../src/screens/HomePage";
 import Register from "../src/screens/Register";
 import CartScreen from "../src/screens/cartScreen";
 import Login from "../src/screens/Login";
+import Fotter from "./Components/Fotter";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/login" exact component={Login} />
         <Route path="/register" exact component={Register} />
       </BrowserRouter>
+      <Fotter />
     </div>
   );
 }

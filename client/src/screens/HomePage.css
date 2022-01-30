@@ -1,14 +1,4 @@
-/* .pi{
-    display: grid;
-    grid-template-columns: 300px 300px 300px;
-    gap:2rem;
-    justify-content: center;
-    margin-top: 50px;
-    margin-bottom: 40px;
-} */
-.pi{
-    display: flex;
-    flex-wrap:wrap;
-    align-items: center;
-    justify-content: center;
+.single_pizza{
+    margin-top: 6rem !important;
+    margin-bottom: 6rem !important;
 }
