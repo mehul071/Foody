@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Aos from "aos";
+import Button from "react-bootstrap/Button";
 import "./pizza.css";
 import { addtoCart } from "../actions/cartAction";
 import Loading from "../Components/Loading";
 import Card from "react-bootstrap/Card";
+import { Alert } from "@mui/material";
 
 export default function Pizza({ pizza }) {
   Aos.init();
@@ -12,18 +14,28 @@ export default function Pizza({ pizza }) {
   const [quantity, setQuantity] = useState(1);
   const [varient, setvarient] = useState("small");
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [addtocart, setAddtocart] = useState(false);
+
   const addcart = () => {
     dispatch(addtoCart(pizza, quantity, varient));
+    console.log(addcart);
+    setAddtocart(true);
+    setTimeout(() => {
+      setAddtocart(false);
+    }, 3000);
+    console.log(addcart);
   };
+
   const pizzaState = useSelector((state) => state.getAllPizzasReducer);
-  const { loading, error } = pizzaState;
+  const { loading, error, success } = pizzaState;
   return (
-    <Card style={{ width: "360px" }} className="p-4 pizza">
-      <Card.Img variant="top" src={pizza.image} style={{ height: "300px" }} />
+    <Card style={{ width: "290px", height: "457px" }} className=" pizza p-2">
+      {addtocart && <Alert className="mb-2">Successfully added to cart</Alert>}
+      <Card.Img variant="top" src={pizza.image} style={{ height: "200px" }} />
       <Card.Body>
-        <Card.Title className="text-center">{pizza.name}</Card.Title>
+        <Card.Title className="text-center pizza_title">
+          {pizza.name}
+        </Card.Title>
         {/* <div className="flex "> */}
         <Card.Text>
           <div className="flex">
@@ -53,6 +65,9 @@ export default function Pizza({ pizza }) {
             })}
           </select>
         </Card.Text>
+        <Button onClick={addcart} className="mt-2" size="sm">
+          Add to Cart
+        </Button>
       </Card.Body>
     </Card>
   );

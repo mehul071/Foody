@@ -32,9 +32,7 @@ function HomePage() {
             pizzas.map((pizza, i) => {
               return (
                 <div value={i} className="col-md-4">
-                  <div>
-                    <Pizza pizza={pizza} />
-                  </div>
+                  <Pizza pizza={pizza} />
                 </div>
               );
             })

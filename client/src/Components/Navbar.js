@@ -21,7 +21,7 @@ function Navbar() {
   }
 
   return (
-    <div className="Navbar flex justify-between p-4 place-items-center">
+    <div className="Navbar flex justify-between p-2.5 place-items-center">
       <div className="left">
         <a href="/" className="cursor-pointer">
           <h1>

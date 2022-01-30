@@ -33,7 +33,7 @@ function Login() {
     <div className="sign-in-box flex flex-col justify-center items-center mt-8">
       {loading && <Loading />}
       <div className="flex flex-col items-center box bg-white">
-        <h1 className="">Sign in.</h1>
+        <h1>Sign in.</h1>
         <InputGroup className="mb-4">
           <FormControl
             placeholder="UserName"
