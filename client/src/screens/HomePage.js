@@ -16,7 +16,7 @@ function HomePage() {
     dispatch(getAllPizzas());
   }, []);
   return (
-    <div>
+    <div className="store">
       <div className="container">
         <Filter />
         <div className="row single_pizza">

@@ -6,4 +6,8 @@
     background-color: red;
     color: white;
     text-align: center;
-  }
+}
+.store{
+  position: relative;
+  min-height: 100vh;
+}
