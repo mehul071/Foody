@@ -77,9 +77,9 @@ function Register() {
           />
         </InputGroup>
 
-        <Button variant="dark" className="sign-btn border-2" onClick={register}>
+        <button variant="dark" className="sign-btn border-2" onClick={register}>
           Register
-        </Button>
+        </button>
         <h1 className="mt-2 redirect_login">
           <a href="/login" className="text-xl hover:text-black back_login">
             Back to Login

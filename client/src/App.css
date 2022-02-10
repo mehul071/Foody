@@ -6,3 +6,10 @@ body{
 a{
   text-decoration: none !important;
 }
+button{
+  color: black;
+  background-color:blue;
+  border-radius: 8px;
+  border:none;
+  padding:2px;
+}

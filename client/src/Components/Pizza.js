@@ -65,9 +65,9 @@ export default function Pizza({ pizza }) {
             })}
           </select>
         </Card.Text>
-        <Button onClick={addcart} className="mt-2" size="sm">
+        <button onClick={addcart} className="mt-2 add_to_cart" size="sm">
           Add to Cart
-        </Button>
+        </button>
       </Card.Body>
     </Card>
   );

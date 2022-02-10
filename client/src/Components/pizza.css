@@ -5,3 +5,10 @@
 .pizza_title{
     font-size:1rem !important;
 }
+button{
+    color: black;
+    background-color:blue;
+    border-radius: 5px;
+    border:none;
+    padding:2px;
+}

@@ -57,7 +57,7 @@ function Login() {
             }}
           />
         </InputGroup>
-        <Button
+        <button
           variant="dark"
           className="mb-4"
           onClick={(e) => {
@@ -65,7 +65,7 @@ function Login() {
           }}
         >
           Sign in
-        </Button>
+        </button>
         <p className="new_account">
           Don't have an account?
           <a href="/register" className="redirect_register">
