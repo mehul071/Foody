@@ -7,9 +7,9 @@ a{
   text-decoration: none !important;
 }
 button{
-  color: black;
-  background-color:blue;
-  border-radius: 8px;
-  border:none;
-  padding:2px;
+  color: black !important;
+  background-color:blue !important;
+  border-radius: 8px !important;
+  border:none !important;
+  padding:2px !important;
 }
